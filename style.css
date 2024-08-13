@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #2e2c39;
+    overflow: hidden;
+}
+
+.cursor {
+    position: absolute;
+    pointer-events: none;
+}
+
+.cursor span {
+    position: absolute;
+    width: 12px;
+    height: 60px;
+    background: green;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 2px;
+    border-top: 70px solid green;
+    border-bottom: 70px solid green;
+}
+
+/* The red circle in the upper part of the 9th span */
+.cursor span:nth-child(15)::before {
+    content: '';
+    position: absolute;
+    top: 15%;  /* Adjust this value to move the circle higher */
+    left: -400%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: red;
+    border-radius: 50%;
+    z-index: 100;
+}
+
